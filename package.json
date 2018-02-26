@@ -1,0 +1,19 @@
+{
+  "name": "demutable",
+  "version": "0.0.1",
+  "description": "A fun experiment around immutable objects without immutable.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlaustill/demutable.js.git"
+  },
+  "author": "Joshua Austill",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jlaustill/demutable.js/issues"
+  },
+  "homepage": "https://github.com/jlaustill/demutable.js#readme"
+}
