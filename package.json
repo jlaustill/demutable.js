@@ -4,7 +4,7 @@
   "description": "A fun experiment around immutable objects without immutable.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/example.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jlaustill/demutable.js/issues"
   },
-  "homepage": "https://github.com/jlaustill/demutable.js#readme"
+  "homepage": "https://github.com/jlaustill/demutable.js#readme",
+  "dependencies": {
+    "lodash": "^4.17.5"
+  }
 }
