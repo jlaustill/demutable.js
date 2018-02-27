@@ -1,4 +1,4 @@
-const demute = require('../index.js').demute;
+import demute from '../index.js';
 
 const a = demute([1,2,3]);
 const b = a.push(4);

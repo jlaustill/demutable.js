@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-demuteArray = function (obj) {
+const demuteArray = function (obj) {
     if (_.isArray(obj)) {
         obj.push = function(value) {
             return [...this, value];
@@ -14,4 +14,4 @@ demuteArray = function (obj) {
     return obj;
 };
 
-exports.demuteArray = demuteArray;
+export default demuteArray;

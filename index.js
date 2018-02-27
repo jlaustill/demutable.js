@@ -1,6 +1,6 @@
-const demuteArray = require('./src/demute-array').demuteArray;
+import demuteArray from './src/demute-array';
 
-demute = function (_obj) {
+const demute = function (_obj) {
   const obj = demuteArray(_obj);
 
   // Retrieve the property names defined on obj
@@ -19,4 +19,4 @@ demute = function (_obj) {
   return Object.freeze(obj);
 };
 
-exports.demute = demute;
+export default demute;
