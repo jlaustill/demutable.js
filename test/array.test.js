@@ -1,5 +1,4 @@
-import demute from '../index';
-import isDemuted from './isDemuted';
+import demute, { isDemuted } from '../index';
 
 describe('array', () => {
   it('should pop without mutating', () => {
