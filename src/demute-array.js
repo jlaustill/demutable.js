@@ -2,7 +2,7 @@ import demute, { isDemuted } from '../index';
 import { isArray, cloneDeep } from 'lodash';
 
 const demuteArray = function (obj) {
-    if (isArray(obj)) {
+    if (isArray(obj) && !isDemuted(obj)) {
         obj.push = function(...values) {
             return demute([...this, ...values]);
         };

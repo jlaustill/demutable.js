@@ -15,7 +15,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var demuteArray = function demuteArray(obj) {
-    if ((0, _lodash.isArray)(obj)) {
+    if ((0, _lodash.isArray)(obj) && !(0, _index.isDemuted)(obj)) {
         obj.push = function () {
             for (var _len = arguments.length, values = Array(_len), _key = 0; _key < _len; _key++) {
                 values[_key] = arguments[_key];
