@@ -12,10 +12,13 @@ const demuteArray = function (obj) {
         };
 
         obj.shift = function() {
-            return this.slice(0, 1)[0];
+            return demute(this.slice(0, 1)[0]);
         };
 
         // obj.sort
+        obj.sort = function(compareFunction) {
+            return demute(_.cloneDeep(this).sort(compareFunction));
+        };
 
         obj.reverse = function() {
             return demute(this.map((_, i, a) => a[a.length - i - 1]));

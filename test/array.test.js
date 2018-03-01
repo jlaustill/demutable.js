@@ -15,6 +15,13 @@ describe('array', () => {
     expect(isDemuted(b)).toBe(true);
   });
 
+  it('should sort without mutating', () => {
+    const b = a.sort();
+    expect(b.pop()).toBe(3);
+    expect(b.shift()).toBe(1);
+    expect(isDemuted(b)).toBe(true);
+  });
+
   it('should pop without mutating', () => {
     const b = a.pop();
     expect(b).toBe(2);
