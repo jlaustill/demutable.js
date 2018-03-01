@@ -15,4 +15,9 @@ const d = demute({
   ],
 });
 
-console.log(`d: ${JSON.stringify(d)}, d.favoriteNumbers.pop(): ${d.favoriteNumbers.pop()}`);
+console.log(`d starts as: ${JSON.stringify(d)}`);
+console.log(`d.favoriteNumbers.pop(): ${d.favoriteNumbers.pop()}`);
+console.log(`d.favoriteNumbers.shift(): ${d.favoriteNumbers.shift()}`);
+console.log(`d.favoriteNumbers.push(7): ${d.favoriteNumbers.push(7)}`);
+// console.log(`d.favoriteNumbers.unshift(a, b): ${d.favoriteNumbers.unshift(a, b)}`);
+console.log(`d ends as: ${JSON.stringify(d)}`);

@@ -1,8 +1,8 @@
-import demute from '../index';
-const _ = require('lodash');
+import demute, { isDemuted } from '../index';
+import { isArray, cloneDeep } from 'lodash';
 
 const demuteArray = function (obj) {
-    if (_.isArray(obj)) {
+    if (isArray(obj)) {
         obj.push = function(...values) {
             return demute([...this, ...values]);
         };
@@ -17,7 +17,7 @@ const demuteArray = function (obj) {
 
         // obj.sort
         obj.sort = function(compareFunction) {
-            return demute(_.cloneDeep(this).sort(compareFunction));
+            return demute(cloneDeep(this).sort(compareFunction));
         };
 
         obj.reverse = function() {
