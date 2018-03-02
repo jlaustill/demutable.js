@@ -1,7 +1,8 @@
 import demuteArray from './demute-array';
+import demuteObject from './demute-object';
 
 const demute = function (_obj) {
-  const obj = demuteArray(_obj);
+  const obj = demuteObject(demuteArray(_obj));
   const objectIsFunction = typeof obj === 'function';
 
   // Retrieve the property names defined on obj

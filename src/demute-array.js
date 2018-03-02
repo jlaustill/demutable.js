@@ -1,8 +1,11 @@
 import demute, { isDemuted } from '../index';
 import { isArray, cloneDeep } from 'lodash';
+import demuteObject from './demute-object';
 
-const demuteArray = function (obj) {
-    if (isArray(obj) && !isDemuted(obj)) {
+const demuteArray = function (_obj) {
+    if (isArray(_obj) && !isDemuted(_obj)) {
+        const obj = demuteObject(_obj);
+
         obj.push = function(...values) {
             return demute([...this, ...values]);
         };
@@ -32,9 +35,11 @@ const demuteArray = function (obj) {
         obj.unshift = function(...values) {
             return demute([...values, ...this]);
         }
+
+        return obj;
     }
 
-    return obj;
+    return _obj;
 };
 
 export default demuteArray;

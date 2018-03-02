@@ -14,6 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var demute = function demute(_obj) {
   var obj = (0, _demuteArray2.default)(_obj);
+  var objectIsFunction = typeof obj === 'function';
 
   // Retrieve the property names defined on obj
   var propNames = Object.getOwnPropertyNames(obj);
@@ -21,9 +22,9 @@ var demute = function demute(_obj) {
   // Freeze properties before freezing self
   propNames.forEach(function (name) {
     var prop = obj[name];
-
-    // Freeze prop if it is an object
-    if ((typeof prop === 'undefined' ? 'undefined' : _typeof(prop)) === 'object' && prop !== null) demute(prop);
+    if ((objectIsFunction ? name !== 'caller' && name !== 'callee' && name !== 'arguments' : true) && prop !== null && ((typeof prop === 'undefined' ? 'undefined' : _typeof(prop)) === 'object' || prop === 'function') && !Object.isFrozen(prop)) {
+      demute(prop);
+    }
   });
 
   // Freeze self (no-op if already frozen)
